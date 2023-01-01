@@ -83,10 +83,21 @@ class RecommendPredictor(Resource):
 #                             }
 
 app = Flask(__name__)
-api = Api(app)
+#api = Api(app)
+
+
+#app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'This is a DL API for review prediction'
+
+@app.route('/about')
+def about():
+    return 'The API accepts review text and predicts recommendation status'
 
 #api.add_resource(Entrypoint, '/')
-api.add_resource(RecommendPredictor, '/predict')
+#api.add_resource(RecommendPredictor, '/predict')
     
 
 # app = Flask(__name__)
